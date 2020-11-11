@@ -19,13 +19,40 @@
 
 <body>
     <br>
-    <div class="container" class="btn-group" role="group" aria-label="Basic example" style="text-align: center;">
-        <button type="button" class="btn btn-secondary">Left</button>
-        <button type="button" class="btn btn-secondary">Middle</button>
-        <button type="button" class="btn btn-secondary">Right</button>
+    <div class="container">
+        <div class="row">
+            <button id="texto" class="btn btn-block btn-secondary" disabled>Español</button>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <button id="boton1" class="btn btn-block btn-secondary">Tiempo1</button>
+            </div>
+            <div class="col">
+                <button id="boton2" class="btn btn-block btn-secondary">Tiempo2</button>
+            </div>
+            <div class="col">
+                <button id="boton3" class="btn btn-block btn-secondary">Tiempo3</button>
+            </div>
+        </div>
+
     </div>
     <script>
+        function verbo() {
+            //Math.floor nos devuelve el número entero
+            var verboElegido = Math.floor (Math.random() * verbos.length);
+            console.log(verboElegido);
+            
+            //Texto que indica el verbo en español
+            document.getElementById("texto").innerHTML = verbos[verboElegido][3];
 
+            //Botones de los verbos en inglés
+            document.getElementById("boton1").innerHTML = verbos[verboElegido][0];
+            document.getElementById("boton2").innerHTML = verbos[verboElegido][1];
+            document.getElementById("boton3").innerHTML = verbos[verboElegido][2];
+        }
+
+        verbo();
     </script>
 </body>
 
