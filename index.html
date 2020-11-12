@@ -15,41 +15,69 @@
 
     <!-- Script de la lista de verbos -->
     <script src="js/listaVerbos.js"></script>
+
+    <style>
+        .caja {
+            max-height: 25px;
+        }
+    </style>
+
 </head>
 
-<body>
+<body style="background-color: lightgreen;">
     <br>
     <div class="container">
         <div class="row">
-            <button id="texto" class="btn btn-block btn-secondary" disabled>Español</button>
+            <button id="texto" class="btn btn-block btn-primary" disabled>Español</button>
         </div>
         <br>
         <div class="row">
             <div class="col">
-                <button id="boton1" class="btn btn-block btn-secondary">Tiempo1</button>
+                <button id="boton1" class="btn btn-block btn-warning">Tiempo1</button>
             </div>
             <div class="col">
-                <button id="boton2" class="btn btn-block btn-secondary">Tiempo2</button>
+                <button id="boton2" class="btn btn-block btn-warning">Tiempo2</button>
             </div>
             <div class="col">
-                <button id="boton3" class="btn btn-block btn-secondary">Tiempo3</button>
+                <button id="boton3" class="btn btn-block btn-warning">Tiempo3</button>
             </div>
+            <button id="boton3" class="btn btn-block btn-warning">Tiempo3</button>
         </div>
 
     </div>
     <script>
         function verbo() {
-            //Math.floor nos devuelve el número entero
-            var verboElegido = Math.floor (Math.random() * verbos.length);
-            console.log(verboElegido);
-            
+            //Math.floor nos devuelve el número entero 
+            //Math.random nos da dentro de un array, el array random
+            //Hacemos random el verbo a adivinar, asi no van en orden
+            var verboElegido = Math.floor(Math.random() * verbos.length);
+
+            //Elegimos de forma random el tiempo verbal que debemos adivinar
+            var oculta = Math.floor(Math.random() * 3);
+            console.log(oculta);
+
             //Texto que indica el verbo en español
             document.getElementById("texto").innerHTML = verbos[verboElegido][3];
 
-            //Botones de los verbos en inglés
-            document.getElementById("boton1").innerHTML = verbos[verboElegido][0];
-            document.getElementById("boton2").innerHTML = verbos[verboElegido][1];
-            document.getElementById("boton3").innerHTML = verbos[verboElegido][2];
+            //Se oculta el texto de uno de los botones que es el que debemos adivinar
+            //Primer boton
+            if (oculta == 0) {
+                document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control caja">';
+            } else {
+                document.getElementById("boton1").innerHTML = verbos[verboElegido][0];
+            }
+            //Segundo boton
+            if (oculta == 1) {
+                document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control caja">';
+            } else {
+                document.getElementById("boton2").innerHTML = verbos[verboElegido][1];
+            }
+            //Tercer boton
+            if (oculta == 2) {
+                document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control caja">';
+            } else {
+                document.getElementById("boton3").innerHTML = verbos[verboElegido][2];
+            }
         }
 
         verbo();
