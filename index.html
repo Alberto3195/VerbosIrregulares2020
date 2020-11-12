@@ -16,12 +16,6 @@
     <!-- Script de la lista de verbos -->
     <script src="js/listaVerbos.js"></script>
 
-    <style>
-        .caja {
-            max-height: 25px;
-        }
-    </style>
-
 </head>
 
 <body style="background-color: lightgreen;">
@@ -33,15 +27,15 @@
         <br>
         <div class="row">
             <div class="col">
-                <button id="boton1" class="btn btn-block btn-warning">Tiempo1</button>
+                <div id="boton1"></div>
             </div>
             <div class="col">
-                <button id="boton2" class="btn btn-block btn-warning">Tiempo2</button>
+                <div id="boton2"></div>
             </div>
             <div class="col">
-                <button id="boton3" class="btn btn-block btn-warning">Tiempo3</button>
+                <div id="boton3"></div>
             </div>
-            <button id="boton3" class="btn btn-block btn-warning">Tiempo3</button>
+            
         </div>
 
     </div>
@@ -62,21 +56,21 @@
             //Se oculta el texto de uno de los botones que es el que debemos adivinar
             //Primer boton
             if (oculta == 0) {
-                document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control caja">';
+                document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control ">';
             } else {
-                document.getElementById("boton1").innerHTML = verbos[verboElegido][0];
+                document.getElementById("boton1").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][0] + '</button>';
             }
             //Segundo boton
             if (oculta == 1) {
-                document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control caja">';
+                document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
             } else {
-                document.getElementById("boton2").innerHTML = verbos[verboElegido][1];
+                document.getElementById("boton2").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][1] + '</button>';
             }
             //Tercer boton
             if (oculta == 2) {
-                document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control caja">';
+                document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
             } else {
-                document.getElementById("boton3").innerHTML = verbos[verboElegido][2];
+                document.getElementById("boton3").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][2] + '</button>';
             }
         }
 
