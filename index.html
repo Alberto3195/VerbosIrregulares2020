@@ -18,63 +18,53 @@
 
 </head>
 
-<body style="background-color: lightgreen;">
+<body style="background-color:  lightseagreen;">
+    <!-- <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <img src="img/eng.jpg" style="width: 20; height: 10;">
+        </div>
+        <div class="col-4"></div>
+    </div> -->
+    <img src="img/eng.jpg">
     <br>
     <div class="container">
+        <br>
         <div class="row">
-            <button id="texto" class="btn btn-block btn-primary" disabled>Español</button>
+            <div class="col-3">
+                <button id="veinte" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">20</a></button>
+            </div>
+            <div class="col-3">
+                <button id="40" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">40</a></button>
+            </div>
+            <div class="col-3">
+                <button id="60" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">60</a></button>
+            </div>
+            <div class="col-3">
+                <button id="80" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">80</a></button>
+            </div>
         </div>
         <br>
         <div class="row">
-            <div class="col">
-                <div id="boton1"></div>
+            <div class="col-3">
+                <button id="100" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">100</a></button>
             </div>
-            <div class="col">
-                <div id="boton2"></div>
+            <div class="col-3">
+                <button id="120" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">120</a></button>
             </div>
-            <div class="col">
-                <div id="boton3"></div>
+            <div class="col-3">
+                <button id="140" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">140</a></button>
             </div>
-            
+            <div class="col-3">
+                <button id="todos" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">Todos</a></button>
+            </div>
         </div>
 
     </div>
     <script>
-        function verbo() {
-            //Math.floor nos devuelve el número entero 
-            //Math.random nos da dentro de un array, el array random
-            //Hacemos random el verbo a adivinar, asi no van en orden
-            var verboElegido = Math.floor(Math.random() * verbos.length);
+        function veinte() {
 
-            //Elegimos de forma random el tiempo verbal que debemos adivinar
-            var oculta = Math.floor(Math.random() * 3);
-            console.log(oculta);
-
-            //Texto que indica el verbo en español
-            document.getElementById("texto").innerHTML = verbos[verboElegido][3];
-
-            //Se oculta el texto de uno de los botones que es el que debemos adivinar
-            //Primer boton
-            if (oculta == 0) {
-                document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control ">';
-            } else {
-                document.getElementById("boton1").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][0] + '</button>';
-            }
-            //Segundo boton
-            if (oculta == 1) {
-                document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
-            } else {
-                document.getElementById("boton2").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][1] + '</button>';
-            }
-            //Tercer boton
-            if (oculta == 2) {
-                document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
-            } else {
-                document.getElementById("boton3").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][2] + '</button>';
-            }
         }
-
-        verbo();
     </script>
 </body>
 
