@@ -16,153 +16,77 @@
     <!-- Script de la lista de verbos -->
     <script src="js/listaVerbos.js"></script>
 
+
 </head>
 
-<body style="background-color:  yellow;">
+<body style="background-image: url(img/via.png);">
     <br>
     <div class="container">
-        <div class="row">
-            <button id="texto" class="btn btn-block btn-primary" style="color: black;" disabled>Español</button>
+
+        <div class="row-8">
+            <button id="texto" class="btn btn-block btn-warning"></button>
         </div>
+
         <br>
+
         <div class="row">
-            <div class="col-10">
-                Aquí van las estrellas
-            </div>
+
             <div class="col-2">
-                <button id="marcador" class="btn btn-block btn-primary" style="color: black;" disabled>0</button>
+                <button id="level" class="btn btn-block btn-warning" style="color: black;"></button>
             </div>
+
+            <div class="col-8">
+                <script src="https://kit.fontawesome.com/7d3ccb2255.js" crossorigin="anonymous"></script>
+            </div>
+
+            <div class="col-2">
+                <button id="marcador" class="btn btn-block btn-warning" style="color: black;">0</button>
+            </div>
+
         </div>
+
         <br>
+
         <div class="row">
+
             <div class="col">
                 <div id="boton1"></div>
             </div>
+
             <div class="col">
                 <div id="boton2"></div>
             </div>
+
             <div class="col">
                 <div id="boton3"></div>
             </div>
+
         </div>
+
         <br>
+
         <!-- Boton para comprobar el resultado -->
         <div class="row">
+
             <div class="col-1"></div>
+
             <div class="col-10">
                 <button id="resultado" class="btn btn-block btn-dark" onclick="comprueba()">COMPROBAR</button>
             </div>
+
             <div class="col-1"></div>
+
         </div>
+
         <br>
-        <!-- Boton para continuar al siguiente verbo -->
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <button id="siguiente" class="btn btn-block btn-dark" onclick="verboSiguiente()">SIGUIENTE</button>
-            </div>
-            <div class="col-1"></div>
+
+        <div class="row-8">
+            <button class="btn btn-block btn-dark"><a href="Index.html">Cambiar nivel</a></button>
         </div>
-        <br>
-        <div class="row">
-            <button id="resultado" class="btn btn-block btn-dark"><a href="Index.html">Pagina de inicio</a></button>
-            </div>
-        </div>
-    </div>
 
     </div>
-    <script>
-
-        var oculta = 0;
-        var verboElegido = 0;
-        var estado = 0;
-        var marcador = 0;
-
-        // function verboSiguiente(){
-
-        //}
-
-        function comprueba() {
-            if (estado == 0) {
-                //Lo primero le decimos que estamos jugando de modo que le decimos que el estado es 1
-                estado = 1;
-
-                //leemos el contenido de la caja de texto
-                var verboLeido = document.getElementById('caja').value;
-                //Eliminamos el color del boton de resultado
-                document.getElementById("resultado").classList.remove('btn-dark');
-                document.getElementById("resultado").classList.remove('btn-success');
-                document.getElementById("resultado").classList.remove('btn-danger');
-
-                //Bucle que comprueba si la respuesta es correcta
-                if (verbos[verboElegido][oculta] == verboLeido) {
-                    //Si el texto es correcto, se pone verde el boton de comprobar y aumenta en 1 el marcador
-                    document.getElementById("resultado").classList.add('btn-success');
-                    marcador++;
-                    document.getElementById("resultado").innerText = "¡¡CORRECTO!!";
-                    document.getElementById("caja").classList.remove();
-                } else {
-                    //Si el texto es incorrecto se pone rojo el valor
-                    marcador = 0;
-                    document.getElementById("resultado").classList.add('btn-danger');
-                    document.getElementById("resultado").innerText = verbos[verboElegido][oculta];
-                }
-            } else {
-                document.getElementById('resultado').classList.add('btn-dark');
-                document.getElementById('resultado').innerText = "SIGUIENTE";
-                estado = 0;
-                verbo();
-            }
-            //Actualizo el valor del marcador
-            document.getElementById('marcador').innerText = marcador;
-        }
-
-        function verbo() {
-            //Math.floor nos devuelve el número entero 
-            //Math.random nos da dentro de un array, el array random
-
-            //Hacemos random el verbo a adivinar, asi no van en orden
-            verboElegido = Math.floor(Math.random() * verbos.length);
-
-            //Elegimos de forma random el tiempo verbal que debemos adivinar
-            oculta = Math.floor(Math.random() * 3);
-
-            //Texto que indica el verbo en español
-            document.getElementById("texto").innerHTML = verbos[verboElegido][3];
-
-            // switch (oculta = Math.floor(Math.random() * 3)) {
-            //     case 0:  document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control ">';
-            //         break;
-            //     case 1:  document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
-            //         break;
-            //     case 2:  document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
-            //         break;
-            // }
-
-
-            //Se oculta el texto de uno de los botones que es el que debemos adivinar
-            //Primer boton
-            if (oculta == 0) {
-                document.getElementById("boton1").innerHTML = '<input id="caja" class="form-control ">';
-            } else {
-                document.getElementById("boton1").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][0] + '</button>';
-            }
-            //Segundo boton
-            if (oculta == 1) {
-                document.getElementById("boton2").innerHTML = '<input id="caja" class="form-control ">';
-            } else {
-                document.getElementById("boton2").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][1] + '</button>';
-            }
-            //Tercer boton
-            if (oculta == 2) {
-                document.getElementById("boton3").innerHTML = '<input id="caja" class="form-control ">';
-            } else {
-                document.getElementById("boton3").innerHTML = '<button class="btn btn-block btn-warning">' + verbos[verboElegido][2] + '</button>';
-            }
-        }
-
-        verbo();
-    </script>
+    
+    <script src="js/funciones2.js"></script>
 </body>
 
 </html>

@@ -15,57 +15,36 @@
 
     <!-- Script de la lista de verbos -->
     <script src="js/listaVerbos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
-<body style="background-color:  lightseagreen;">
-    <!-- <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <img src="img/eng.jpg" style="width: 20; height: 10;">
-        </div>
-        <div class="col-4"></div>
-    </div> -->
-    <img src="img/eng.jpg">
+<body style="background-image: url(img/via.png);">
     <br>
     <div class="container">
         <br>
         <div class="row">
-            <div class="col-3">
-                <button id="veinte" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">20</a></button>
+            <div class="col-12" style="background-color: lightslategray; text-align: center;">
+                <p>CHOOSE A NUMBER OF VERBS</p>
             </div>
-            <div class="col-3">
-                <button id="40" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">40</a></button>
-            </div>
-            <div class="col-3">
-                <button id="60" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">60</a></button>
-            </div>
-            <div class="col-3">
-                <button id="80" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">80</a></button>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-3">
-                <button id="100" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">100</a></button>
-            </div>
-            <div class="col-3">
-                <button id="120" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">120</a></button>
-            </div>
-            <div class="col-3">
-                <button id="140" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">140</a></button>
-            </div>
-            <div class="col-3">
-                <button id="todos" class="btn btn-block btn-dark" class="form-control"><a href="Index2.html">Todos</a></button>
+            <div class="col-12" style="text-align: center;">
+                <button type="button" class="btn btn-info btn-lg m-3" onclick="numVerbo(10)">10</button>
+                <button type="button" class="btn btn-info btn-lg m-3" >40</button>
+                <button type="button" class="btn btn-info btn-lg m-3" >60</button>
+                <button type="button" class="btn btn-info btn-lg m-3" >80</button>
+                <button type="button" class="btn btn-info btn-lg m-3" >100</button>
+                <button type="button" class="btn btn-info btn-lg m-3" >120</button>
+                <button type="button" class="btn btn-info btn-lg m-3" >146</button>
             </div>
         </div>
-
     </div>
-    <script>
-        function veinte() {
+    <script src="js/funciones2.js"></script>
+    <!-- <script>
+    // function eligeVerbos(numVerbos) {
+    //     window.location.href = "index2.html" + "#" + _numVerbos;
+    // }
+    // </script> -->
 
-        }
-    </script>
 </body>
 
 </html>
